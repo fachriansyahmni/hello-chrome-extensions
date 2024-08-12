@@ -1,0 +1,17 @@
+<html>
+
+<body>
+    <h1>Hello Extensions</h1>
+    <button id="send-message">Send Message</button>
+    <script src="popup.js"></script>
+    <script>
+        document.getElementById('send-message').addEventListener('click', function () {
+            chrome.runtime.sendMessage({ greeting: 'hello' }, function (response) {
+                console.log(response.farewell);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
